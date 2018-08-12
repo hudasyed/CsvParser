@@ -8,8 +8,6 @@ namespace API.Models
 {
     public class CsvModel
     {
-        [JsonIgnore]
-        public int Id { get; set;  }
         public string Parent { get; set; }
         public string Child { get; set; }
         public int Quantity { get; set; }

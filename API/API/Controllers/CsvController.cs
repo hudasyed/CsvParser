@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -11,10 +11,14 @@ namespace API.Controllers
     public class CsvController : Controller
     {
         [HttpPost]
-        public async Task<IActionResult> ParseCsv()
+        public async Task<IActionResult> ParseCsv([FromBody] List<CsvModel> file)
         {
             await Task.Delay(10);
-            return Ok();
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            return Ok(file.Count);
         }
     }
 }
