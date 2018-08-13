@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API.Models
 {
-    public class CsvModel
+    public class Record
     {
         public string Parent { get; set; }
         public string Child { get; set; }
